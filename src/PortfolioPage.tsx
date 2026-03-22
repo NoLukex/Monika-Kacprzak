@@ -75,7 +75,7 @@ export default function PortfolioPage() {
               <span className="block text-primary">o zdrowym ruchu na co dzień.</span>
             </h1>
             <p className="max-w-3xl text-lg text-on-surface-variant leading-relaxed mb-10">
-              Tutaj znajdziesz wybrane materiały z YouTube Moniki Kacprzak. To treści o ruchu, pracy z ciałem, rozruchu i ćwiczeniach, które pomagają lepiej zrozumieć, jak dbać o sprawność w codziennym życiu.
+              Tutaj znajdziesz moje wybrane materiały z YouTube. To treści o ruchu, pracy z ciałem, rozruchu i ćwiczeniach, które pomagają lepiej zrozumieć, jak dbać o sprawność w codziennym życiu.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
