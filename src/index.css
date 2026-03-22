@@ -326,6 +326,32 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 -4px 20px rgba(51, 69, 55, 0.15);
 }
 
+/* Floating quick-call button */
+.call-fab {
+  position: fixed;
+  right: 16px;
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  z-index: 45;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(51, 69, 55, 0.28);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.call-fab:hover {
+  transform: scale(1.04);
+}
+
+.call-fab:active {
+  transform: scale(0.96);
+}
+
 @media (max-width: 767px) {
   body {
     padding-bottom: 88px;
@@ -335,6 +361,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .sticky-cta {
     display: none;
+  }
+
+  .call-fab {
+    right: 24px;
+    bottom: 24px;
   }
 }
 

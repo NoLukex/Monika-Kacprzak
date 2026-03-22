@@ -16,7 +16,8 @@ import {
   Instagram,
   Facebook,
   Play,
-  MapPin
+  MapPin,
+  Phone
 } from 'lucide-react';
 
 const CONTACT = {
@@ -270,6 +271,16 @@ const StickyCTA = () => (
   >
     Umów się
     <ArrowRight className="w-4 h-4" aria-hidden="true" />
+  </a>
+);
+
+const QuickCallButton = () => (
+  <a
+    href={CONTACT.phoneHref}
+    className="call-fab"
+    aria-label={`Zadzwoń teraz: ${CONTACT.phoneDisplay}`}
+  >
+    <Phone className="w-6 h-6" aria-hidden="true" />
   </a>
 );
 
@@ -1388,6 +1399,7 @@ export default function App() {
       <Footer />
       {/* Sticky CTA visible only on mobile */}
       <StickyCTA />
+      <QuickCallButton />
     </div>
   );
 }
