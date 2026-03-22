@@ -849,9 +849,9 @@ const Testimonials = () => {
     { src: '/opinie/Screenshot_20260321_065154_Maps.jpg', position: 'center 47%' },
     { src: '/opinie/Screenshot_20260321_065205_Maps.jpg', position: 'center 44%' },
     { src: '/opinie/Screenshot_20260321_065232_Maps.jpg', position: 'center 46%' },
-    { src: '/opinie/weronika-nowicka-clean.png', position: 'center top', fit: 'natural' },
+    { src: '/opinie/Screenshot_20260321_065111_Maps.jpg', position: 'center 45%' },
     { src: '/opinie/Screenshot_20260321_065353_Maps.jpg', position: 'center 46%' },
-    { src: '/opinie/hanna-skowronek-clean.png', position: 'center top', fit: 'natural' },
+    { src: '/opinie/Screenshot_20260321_065406_Maps.jpg', position: 'center 45%' },
     { src: '/opinie/Screenshot_20260321_065424_Maps.jpg', position: 'center 45%' },
     { src: '/opinie/Screenshot_20260321_065452_Maps.jpg', position: 'center 45%' },
   ];
