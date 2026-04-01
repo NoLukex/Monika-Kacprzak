@@ -9,3 +9,5 @@ coverage/
 test-results/
 *.png
 contact-shot.mjs
+
+.vercel

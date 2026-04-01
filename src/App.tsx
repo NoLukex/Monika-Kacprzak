@@ -43,41 +43,53 @@ const NAV_ITEMS = [
 
 const OFFER_ITEMS = [
   {
-    name: 'Trening medyczny',
-    displayName: 'Trening medyczny',
-    price: '360 zł',
-    tag: 'Na ból i ograniczenia',
-    intro: 'Gdy ciało potrzebuje ulgi, odzyskania zakresu i bezpiecznego planu działania.',
-    bullets: ['pierwsze dolegliwości', 'bezpieczny powrót do ruchu', 'koniec zgadywania'],
-    outcome: 'Pomaga wrócić do swobodnego, bezpiecznego ruchu.',
+    name: 'Trening personalny 1:1',
+    displayName: 'Trening personalny 1:1',
+    price: '55 min · 200 zł',
+    format: 'Spotkanie 1:1',
+    tag: 'medyczny · siłowy · korekcyjny',
+    intro: 'Indywidualna praca z trenerem, gdy chcesz ćwiczyć konkretnie, bezpiecznie i pod swoje cele.',
+    bullets: ['pełna uwaga trenera', 'plan dopasowany do Twojego celu', 'bezpieczny progres krok po kroku'],
+    outcome: 'Najlepsza opcja, jeśli potrzebujesz stałej opieki 1:1.',
   },
   {
-    name: 'Trening korekcji postawy ciała',
-    displayName: 'Korekcja postawy',
-    price: '360 zł',
-    tag: 'Na postawę i napięcia',
-    intro: 'Praca nad ustawieniem ciała, zmniejszeniem napięć i odzyskaniem większej swobody w ruchu.',
-    bullets: ['praca siedząca', 'sztywność i napięcia', 'lepsza postawa'],
-    outcome: 'Pomaga ustawić ciało w bardziej stabilny i komfortowy sposób.',
+    name: 'Diagnostyka',
+    displayName: 'Diagnostyka',
+    price: '55 min · 250 zł',
+    format: 'Spotkanie 1:1',
+    tag: 'jednorazowe spotkanie',
+    intro: 'Jednorazowa konsultacja, od której najlepiej zacząć, jeśli chcesz wiedzieć, jaki typ treningu będzie dla Ciebie najbezpieczniejszy i najskuteczniejszy.',
+    bullets: ['ocena funkcjonalna i siły', 'dobór najlepszego kierunku dalszej pracy', 'większy komfort i poczucie bezpieczeństwa'],
+    outcome: 'Pomaga zacząć mądrze, bez zgadywania i przypadkowych treningów.',
   },
   {
-    name: 'Trening siłowy - kształtowanie sylwetki',
-    displayName: 'Trening siłowy',
-    price: '320 zł',
-    tag: 'Na siłę i sylwetkę',
-    intro: 'Jeśli chcesz widzieć efekty, budować sprawność i ćwiczyć z planem.',
-    bullets: ['konkretne efekty', 'więcej siły', 'sprawność i sylwetka'],
-    outcome: 'Pomaga budować siłę, sprawność i pewność w ruchu.',
+    name: 'Plany treningowe do pracy własnej',
+    displayName: 'Plany treningowe',
+    price: '1,5 h · 400 zł',
+    format: 'Współpraca hybrydowa',
+    tag: 'współpraca hybrydowa',
+    intro: 'Zaczynamy od wywiadu i diagnostyki, a potem dostajesz indywidualny plan do pracy własnej w domu lub na innej siłowni.',
+    bullets: ['start od wywiadu i diagnostyki', 'samodzielna praca na indywidualnym planie', 'spotkania co sześć tygodni na podsumowanie postępów i dobór kolejnych ćwiczeń'],
+    outcome: 'Daje Ci samodzielność, ale dalej prowadzi Cię przez cały proces.',
   },
 ];
 
-const PILATES_OFFER = {
-  name: 'Pilates',
+const MINI_GROUP_OFFER = {
+  name: 'Mini Grupy siłowe dla kobiet',
   description:
-    'Zajęcia grupowe wspierające mięśnie głębokie, stabilizację centralną i świadomą pracę z ciałem. To forma ruchu szczególnie ceniona przez osoby, które chcą zadbać o kręgosłup, centrum ciała i lepszą jakość codziennego funkcjonowania.',
-  prices: ['Wejście jednorazowe - 45 zł', 'Karnet 4 wejść - 160 zł', 'Karnet 8 wejść - 300 zł'],
-  schedule: ['Poniedziałek, 20:00 - ul. Dąbrowskiego 170, Poznań', 'Czwartek, 19:10 - ul. Jarochowskiego 8, Poznań'],
-  cta: 'https://www.facebook.com/groups/619298106742690/',
+    'Chcesz wzmocnić ciało, zadbać o kręgosłup i poczuć większą pewność ruchu, ale nie lubisz tłoku na siłowni? W Hello Body trenujesz w kameralnej, wspierającej atmosferze, pod okiem wykwalifikowanego trenera.',
+  price: '80 zł za spotkanie',
+  highlights: [
+    'start od diagnostyki, oceny funkcjonalnej i oceny siły',
+    'progresujący plan budujący siłę, stabilność i wzmacnianie ciała',
+    'indywidualny dobór obciążenia i liczby powtórzeń dla każdej uczestniczki',
+  ],
+  audience: [
+    'dla kobiet 30–55 lat, które szukają bezpiecznego treningu wzmacniającego',
+    'dla tych, które chcą ćwiczyć siłowo w kameralnej i wspierającej atmosferze',
+    'dla osób, które zaczynają lub wracają do treningu i nie muszą znać ćwiczeń siłowych',
+    'dla kobiet, które chcą odzyskać regularność i pewność ruchu bez presji dużej siłowni',
+  ],
 };
 
 const PersonalMark = ({ emphasis = 'default', showRole = true }: { emphasis?: 'default' | 'strong'; showRole?: boolean }) => (
@@ -267,9 +279,9 @@ const StickyCTA = () => (
   <a
     href="#kontakt"
     className="sticky-cta"
-    aria-label="Umów się na konsultację — otworzy formularz kontaktowy"
+    aria-label="Umów konsultację — otworzy formularz kontaktowy"
   >
-    Umów się
+    Umów konsultację
     <ArrowRight className="w-4 h-4" aria-hidden="true" />
   </a>
 );
@@ -305,7 +317,7 @@ const Hero = () => {
         {/* Text */}
         <div className={`z-10 ${visible ? 'animate-fade-in-left' : 'opacity-0'}`}>
           <span className="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase mb-6">
-            Poznań · trening 1:1 i Pilates
+            Poznań · trening 1:1 i mini grupy
           </span>
           <h1 className="text-[3rem] md:text-7xl font-semibold tracking-tight leading-[0.98] md:leading-[1.05] text-on-surface mb-5 md:mb-6 font-display max-w-none md:max-w-none text-balance">
             Zacznij ćwiczyć tak,
@@ -315,7 +327,7 @@ const Hero = () => {
             Jeśli wiesz, że ruch jest Ci potrzebny, ale nie chcesz dalej zgadywać, co będzie dobre dla Twojego ciała, jesteś w dobrym miejscu. Pomagam ćwiczyć bezpiecznie, konkretnie i z planem dopasowanym do Ciebie.
           </p>
           <p className="text-[0.98rem] md:text-base text-on-surface-variant mb-8 md:mb-10 max-w-md leading-relaxed">
-            <span className="font-semibold text-primary">13 lat</span> doświadczenia w pracy indywidualnej z klientami, którzy chcą zadbać o zdrowie, sprawność i większą lekkość w ciele. Treningi prowadzę w studio {CONTACT.studioName} w centrum Poznania.
+            <span className="font-semibold text-primary">13 lat</span> doświadczenia w pracy indywidualnej z klientami, którzy chcą zadbać o zdrowie, sprawność i większą lekkość w ciele. Pomagam ćwiczyć bezpiecznie, konkretnie i z planem dopasowanym do Twojego ciała oraz celu.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -408,8 +420,19 @@ const AboutMe = () => {
           </p>
           <div className="space-y-4 text-on-surface-variant leading-relaxed text-lg mb-10">
             <p>
-              Jestem medycznym trenerem personalnym z{' '}
-              <strong className="text-on-surface">13-letnim doświadczeniem</strong>. Pracuję głównie z osobami, które wiedzą, że ruch jest ważny, ale potrzebują mądrze dobranego planu i profesjonalnego prowadzenia.
+              <span className="font-semibold text-on-surface">13 lat</span> doświadczenia w pracy indywidualnej z klientami, którzy chcą zadbać o zdrowie, sprawność i większą lekkość w ciele. Treningi prowadzę w studio{' '}
+              <a
+                href="https://hb-trening.pl/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-primary underline decoration-primary/50 underline-offset-4 hover:decoration-primary"
+              >
+                Hello Body
+              </a>{' '}
+              w centrum Poznania.
+            </p>
+            <p>
+              Hello Body to studio, które założyłam i którym na co dzień zarządzam.
             </p>
             <p>
               Ruch, przez który prowadzę swoich klientów, ma poprawiać{' '}
@@ -533,8 +556,8 @@ const Authority = () => {
           <div className="relative inline-block w-full">
             <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(51,69,55,0.10)] bg-surface-container aspect-[4/5]">
               <img
-                src="/zdjecia/162A0845.jpg"
-                alt="Monika Kacprzak podczas sesji treningu medycznego"
+                src="/zdjecia/2O8A5211.jpg"
+                alt="Monika Kacprzak prowadzi klientkę podczas ćwiczenia w sekcji Metody pracy"
                 className="w-full h-full object-cover"
                 width="560"
                 height="700"
@@ -590,11 +613,11 @@ const Offer = () => {
               Oferta
             </span>
             <h2 className="text-3xl md:text-5xl font-semibold text-on-surface mb-4 font-display">
-              Współpraca 1:1
-              <span className="block text-primary">oraz osobny rytm Pilates.</span>
+              Oferta dopasowana
+              <span className="block text-primary">do Twojego celu i etapu.</span>
             </h2>
             <p className="text-lg text-on-surface-variant leading-relaxed">
-              Jeśli nie chcesz już ćwiczyć przypadkowo, wybierz formę pracy najlepiej dopasowaną do Twojego celu. Współpraca 1:1 daje pełną indywidualizację, a Pilates jest dobrą opcją dla osób, które lubią regularny ruch w spokojnej formule grupowej.
+              Jeśli nie chcesz już ćwiczyć przypadkowo, wybierz formę współpracy najlepiej dopasowaną do Twojego celu. Możesz zacząć od diagnostyki, wejść w regularny trening 1:1 albo pracować na planie do samodzielnych treningów.
             </p>
             <p className="mt-5 text-sm uppercase tracking-[0.22em] text-primary/80">Wybierz, czego dziś najbardziej potrzebuje Twoje ciało</p>
           </div>
@@ -631,7 +654,7 @@ const Offer = () => {
                   <div className="flex items-end justify-between gap-3 border-t border-surface-variant/40 pt-3">
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.16em] text-on-surface-variant mb-1">Forma</p>
-                      <p className="text-[0.9rem] text-on-surface-variant">Spotkanie 1:1</p>
+                      <p className="text-[0.9rem] text-on-surface-variant">{item.format}</p>
                     </div>
                     <div className="text-right">
                       <p className="text-[10px] uppercase tracking-[0.16em] text-on-surface-variant mb-1">Cena</p>
@@ -668,20 +691,20 @@ const Offer = () => {
         <div className={`rounded-[2.25rem] overflow-hidden border border-primary/15 bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-[0_24px_70px_rgba(51,69,55,0.18)] ${visible ? 'animate-scale-in delay-400' : 'opacity-0'}`}>
           <div className="relative h-[260px] md:h-[340px] overflow-hidden">
             <img
-              src="/zdjecia/846A4940.jpg"
-              alt="Zajęcia Pilates prowadzone przez Monikę Kacprzak"
+              src="/zdjecia/2O8A6496.jpg"
+              alt="Kameralne treningi siłowe dla kobiet w studio Hello Body"
               className="w-full h-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/35 to-transparent" />
             <div className="absolute left-6 right-6 bottom-6 md:left-10 md:right-10 md:bottom-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div className="max-w-2xl">
-                <p className="text-xs uppercase tracking-[0.24em] text-white/70 mb-3">Zajęcia grupowe</p>
-                <h3 className="text-4xl md:text-5xl font-display text-white mb-3">{PILATES_OFFER.name}</h3>
-                <p className="text-white/82 text-base md:text-lg leading-relaxed max-w-2xl">{PILATES_OFFER.description}</p>
+                <p className="text-xs uppercase tracking-[0.24em] text-white/70 mb-3">Treningi grupowe</p>
+                <h3 className="text-4xl md:text-5xl font-display text-white mb-3">{MINI_GROUP_OFFER.name}</h3>
+                <p className="text-white/82 text-base md:text-lg leading-relaxed max-w-2xl">{MINI_GROUP_OFFER.description}</p>
               </div>
               <span className="inline-flex self-start rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/85 backdrop-blur-sm">
-                Kameralna grupa
+                Do 4 kobiet
               </span>
             </div>
           </div>
@@ -690,48 +713,46 @@ const Offer = () => {
             <div className="px-8 py-10 md:px-12 md:py-12">
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.18em] text-on-primary/60 mb-4">Terminy i miejsca</p>
+                  <p className="text-sm uppercase tracking-[0.18em] text-on-primary/60 mb-4">Co zyskujesz</p>
                   <ul className="space-y-4" role="list">
-                    {PILATES_OFFER.schedule.map((slot) => (
-                      <li key={slot} className="flex gap-3 text-on-primary/90 leading-relaxed">
+                    {MINI_GROUP_OFFER.highlights.map((item) => (
+                      <li key={item} className="flex gap-3 text-on-primary/90 leading-relaxed">
                         <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span>{slot}</span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="text-sm uppercase tracking-[0.18em] text-on-primary/60 mb-4">Cennik</p>
-                  <ul className="space-y-4" role="list">
-                    {PILATES_OFFER.prices.map((price) => (
-                      <li key={price} className="flex gap-3 text-on-primary/90 leading-relaxed">
-                        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span>{price}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-sm uppercase tracking-[0.18em] text-on-primary/60 mb-4">Cena</p>
+                  <div className="rounded-[1.25rem] border border-white/12 bg-white/8 px-5 py-5">
+                    <p className="text-3xl font-display text-white mb-2">{MINI_GROUP_OFFER.price}</p>
+                    <p className="text-sm text-on-primary/75">Zapytaj mnie o dostępne terminy dla siebie i dołącz do moich Mini Grup.</p>
+                  </div>
                 </div>
               </div>
 
-              <a
-                href={PILATES_OFFER.cta}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-3 rounded-xl bg-white px-6 py-4 text-primary font-semibold shadow-[0_16px_30px_rgba(0,0,0,0.12)] hover:translate-y-[-1px] transition-all min-h-[52px]"
-              >
-                <Facebook className="w-5 h-5" aria-hidden="true" />
-                Dołącz do grupy na Facebooku
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={CONTACT.phoneHref}
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-6 py-4 text-primary font-semibold shadow-[0_16px_30px_rgba(0,0,0,0.12)] hover:translate-y-[-1px] transition-all min-h-[52px]"
+                >
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                  Zadzwoń i zapytaj o terminy
+                </a>
+                <a
+                  href="#kontakt"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/18 bg-white/8 px-6 py-4 text-white font-semibold hover:bg-white/12 transition-all min-h-[52px]"
+                >
+                  Przejdź do formularza
+                </a>
+              </div>
             </div>
 
-            <div className="bg-white/8 backdrop-blur-sm px-8 py-8 md:px-10 md:py-10 border-t lg:border-t-0 lg:border-l border-white/10 flex flex-col">
+            <div className="bg-white/8 backdrop-blur-sm px-8 py-10 md:px-10 md:py-12 border-t lg:border-t-0 lg:border-l border-white/10 flex flex-col justify-center">
               <p className="text-sm uppercase tracking-[0.18em] text-on-primary/60 mb-5">Dla kogo</p>
-              <ul className="space-y-5 text-on-primary/90" role="list">
-                {[
-                  'dla osób, które chcą wzmacniać centrum ciała i pracować nad stabilizacją',
-                  'dla tych, którzy potrzebują regularnego ruchu wspierającego kręgosłup',
-                  'dla osób lubiących ćwiczyć w grupie, ale w spokojnym, świadomym rytmie',
-                ].map((item) => (
+              <ul className="space-y-6 text-[1.02rem] text-on-primary/90" role="list">
+                {MINI_GROUP_OFFER.audience.map((item) => (
                   <li key={item} className="flex gap-3 leading-relaxed">
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <span>{item}</span>
@@ -785,8 +806,8 @@ const Studio = () => {
         <div className={`lg:w-1/2 grid grid-cols-2 gap-6 relative ${visible ? 'animate-fade-in-right delay-300' : 'opacity-0'}`}>
           <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl transform translate-y-8">
             <img
-              src="/zdjecia/2O8A5370.jpg"
-              alt="Studio Hello Body — profesjonalny sprzęt treningowy"
+              src="/zdjecia/162A0980.jpg"
+              alt="Studio Hello Body — przestrzeń treningowa"
               className="w-full h-full object-cover"
               width="300"
               height="400"
@@ -795,8 +816,8 @@ const Studio = () => {
           </div>
           <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl transform -translate-y-8">
             <img
-              src="/zdjecia/162A0994.jpg"
-              alt="Studio Hello Body — sesja treningowa"
+              src="/zdjecia/2O8A6708.jpg"
+              alt="Studio Hello Body — wnętrze studia"
               className="w-full h-full object-cover"
               width="300"
               height="400"
@@ -849,7 +870,7 @@ const Testimonials = () => {
     { src: '/opinie/Screenshot_20260321_065154_Maps.jpg', position: 'center 47%' },
     { src: '/opinie/Screenshot_20260321_065205_Maps.jpg', position: 'center 44%' },
     { src: '/opinie/Screenshot_20260321_065232_Maps.jpg', position: 'center 46%' },
-    { src: '/opinie/Screenshot_20260321_065111_Maps.jpg', position: 'center 45%' },
+    { src: '/opinie/Screenshot_20260321_065111_Maps.jpg', position: 'center 38%' },
     { src: '/opinie/Screenshot_20260321_065353_Maps.jpg', position: 'center 46%' },
     { src: '/opinie/Screenshot_20260321_065406_Maps.jpg', position: 'center 45%' },
     { src: '/opinie/Screenshot_20260321_065424_Maps.jpg', position: 'center 45%' },
@@ -1214,7 +1235,7 @@ const ContactForm = () => {
                       onChange={handleChange}
                       placeholder="Wpisz swoje imię"
                       autoComplete="given-name"
-                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 focus:bg-surface-container-highest focus:border-primary/40 focus:outline-none transition-all text-on-surface min-h-[52px]"
+                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 text-on-surface min-h-[52px] transition-[background-color,border-color,box-shadow] focus:bg-surface-container-highest focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/15"
                     />
                   </div>
                   <div>
@@ -1230,7 +1251,7 @@ const ContactForm = () => {
                       onChange={handleChange}
                       placeholder="Twoja poczta e-mail"
                       autoComplete="email"
-                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 focus:bg-surface-container-highest focus:border-primary/40 focus:outline-none transition-all text-on-surface min-h-[52px]"
+                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 text-on-surface min-h-[52px] transition-[background-color,border-color,box-shadow] focus:bg-surface-container-highest focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/15"
                     />
                   </div>
                 </div>
@@ -1246,7 +1267,7 @@ const ContactForm = () => {
                       onChange={handleChange}
                       placeholder="+48 000 000 000"
                       autoComplete="tel"
-                    className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 focus:bg-surface-container-highest focus:border-primary/40 focus:outline-none transition-all text-on-surface min-h-[52px]"
+                    className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 text-on-surface min-h-[52px] transition-[background-color,border-color,box-shadow] focus:bg-surface-container-highest focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/15"
                   />
                 </div>
                 <div>
@@ -1258,7 +1279,7 @@ const ContactForm = () => {
                       name="challenge"
                       value={formData.challenge}
                       onChange={handleChange}
-                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 focus:bg-surface-container-highest focus:border-primary/40 focus:outline-none transition-all text-on-surface appearance-none cursor-pointer min-h-[52px]"
+                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 text-on-surface appearance-none cursor-pointer min-h-[52px] transition-[background-color,border-color,box-shadow] focus:bg-surface-container-highest focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/15"
                     >
                       <option>Bóle pleców / kręgosłupa</option>
                       <option>Brak energii i kondycji</option>
@@ -1278,8 +1299,8 @@ const ContactForm = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Opisz krótko swoją sytuację lub pytania..."
-                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 focus:bg-surface-container-highest focus:border-primary/40 focus:outline-none transition-all text-on-surface resize-none"
+                      placeholder="Opisz krótko swoją sytuację lub pytania…"
+                      className="w-full bg-surface-container border border-outline-variant/20 rounded-xl p-4 text-on-surface resize-none transition-[background-color,border-color,box-shadow] focus:bg-surface-container-highest focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/15"
                     />
                 </div>
                 {submitError ? (
@@ -1290,10 +1311,10 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-on-primary font-bold py-5 rounded-xl hover:opacity-90 transition-all shadow-[0_10px_20px_rgba(51,69,55,0.15)] active:scale-[0.98] text-lg mt-4 flex items-center justify-center gap-2 min-h-[56px]"
+                  className="w-full bg-primary text-on-primary font-bold py-5 rounded-xl hover:opacity-90 transition-[opacity,transform,box-shadow] shadow-[0_10px_20px_rgba(51,69,55,0.15)] active:scale-[0.98] text-lg mt-4 flex items-center justify-center gap-2 min-h-[56px]"
                   aria-label="Wyślij zgłoszenie — odezwiemy się w ciągu 24h"
                 >
-                  {isSubmitting ? 'Wysyłam wiadomość...' : 'Wyślij zgłoszenie'}
+                  {isSubmitting ? 'Wysyłam wiadomość…' : 'Wyślij zgłoszenie'}
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </button>
                 <p className="text-xs text-center text-on-surface-variant">
