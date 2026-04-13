@@ -543,7 +543,7 @@ const Authority = () => {
     },
     {
       icon: <Heart className="w-6 h-6" aria-hidden="true" />,
-      title: 'Empatia i konkretność',
+      title: 'Empatia i efektywność',
       desc: 'Nie forsuję, tylko wspieram mądrą pracę z ciałem. Ale też wymagam, bo wiem, co jest potrzebne do realnych efektów.',
     },
   ];
@@ -696,7 +696,7 @@ const Offer = () => {
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/35 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
             <div className="absolute left-6 right-6 bottom-6 md:left-10 md:right-10 md:bottom-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.24em] text-white/70 mb-3">Treningi grupowe</p>
@@ -784,8 +784,11 @@ const Studio = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-8 leading-[1.1] font-display">
             Trening w Twoim rytmie.<br />Tylko dla Ciebie.
           </h2>
-          <p className="text-on-primary/80 text-lg mb-10 leading-relaxed max-w-lg">
+          <p className="text-on-primary/80 text-lg mb-4 leading-relaxed max-w-lg">
             Treningi prowadzę w kameralnym studio {CONTACT.studioName} w centrum Poznania. To przestrzeń dla osób, które nie czują się dobrze w dużych siłowniach i wolą ćwiczyć w spokojnych warunkach, z pełną uwagą trenera.
+          </p>
+          <p className="text-on-primary/60 text-sm mb-10">
+            {CONTACT.studioAddress} — tuż przy Moście Teatralnym
           </p>
           <ul className="space-y-5 text-on-primary/90 text-lg" role="list">
             {[
@@ -1194,7 +1197,7 @@ const ContactForm = () => {
                   className="block rounded-2xl border border-surface-variant/35 bg-surface px-5 py-5 transition-all hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(51,69,55,0.08)]"
                 >
                   <p className="text-xs uppercase tracking-[0.18em] text-on-surface-variant mb-2">E-mail</p>
-                  <p className="text-[1.02rem] font-semibold text-on-surface leading-snug break-all">{CONTACT.email}</p>
+                  <p className="text-[1.02rem] font-semibold text-on-surface leading-snug break-words">{CONTACT.email}</p>
                 </a>
 
                 <a

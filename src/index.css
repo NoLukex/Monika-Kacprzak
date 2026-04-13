@@ -428,6 +428,18 @@ h1, h2, h3, h4, h5, h6 {
 .reveal-section.delay-400 { transition-delay: 0.4s; }
 .reveal-section.delay-500 { transition-delay: 0.5s; }
 
+/* ─────────────────────────────────── */
+/* MOBILE LIGHT GREEN THEME (< 768px)  */
+/* ─────────────────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --color-primary: #5a7a5e;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #7a9a7e;
+    --color-on-primary-container: #e0efe2;
+  }
+}
+
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html {
