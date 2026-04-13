@@ -1,3 +1,10 @@
+# Dependencies & build
+node_modules/
+build/
+dist/
+coverage/
+.vercel
+
 # Embedded repos
 stitch-skills/
 strona/
@@ -8,3 +15,15 @@ strona/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Logs & env
+*.log
+.env*
+!.env.example
+test-results/
+
+# Screenshots & images (local only)
+*.png
+
+# Misc
+contact-shot.mjs
