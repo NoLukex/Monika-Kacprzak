@@ -696,11 +696,11 @@ const Offer = () => {
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-primary/10 to-transparent" />
             <div className="absolute left-6 right-6 bottom-6 md:left-10 md:right-10 md:bottom-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.24em] text-white/70 mb-3">Treningi grupowe</p>
-                <h3 className="text-4xl md:text-5xl font-display text-white mb-3">{MINI_GROUP_OFFER.name}</h3>
+                <h3 className="hidden md:block text-4xl md:text-5xl font-display text-white mb-3">{MINI_GROUP_OFFER.name}</h3>
                 <p className="text-white/82 text-base md:text-lg leading-relaxed max-w-2xl">{MINI_GROUP_OFFER.description}</p>
               </div>
               <span className="inline-flex self-start rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/85 backdrop-blur-sm">
