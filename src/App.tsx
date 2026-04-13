@@ -788,7 +788,7 @@ const Studio = () => {
             Treningi prowadzę w kameralnym studio {CONTACT.studioName} w centrum Poznania. To przestrzeń dla osób, które nie czują się dobrze w dużych siłowniach i wolą ćwiczyć w spokojnych warunkach, z pełną uwagą trenera.
           </p>
           <p className="text-on-primary/60 text-sm mb-10">
-            {CONTACT.studioAddress} — tuż przy Moście Teatralnym
+            ul. Roosevelta 10/2 (tuż przy Moście Teatralnym)
           </p>
           <ul className="space-y-5 text-on-primary/90 text-lg" role="list">
             {[
