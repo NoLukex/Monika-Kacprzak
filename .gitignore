@@ -1,0 +1,10 @@
+# Embedded repos
+stitch-skills/
+strona/
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# OS files
+.DS_Store
+Thumbs.db
