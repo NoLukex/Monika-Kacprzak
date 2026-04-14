@@ -696,7 +696,7 @@ const Offer = () => {
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-primary/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
             <div className="absolute left-6 right-6 bottom-6 md:left-10 md:right-10 md:bottom-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.24em] text-white/70 mb-3">Treningi grupowe</p>
